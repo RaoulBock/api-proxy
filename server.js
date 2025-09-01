@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors()); // Allow requests from any origin
 app.use(bodyParser.json()); // Parse JSON bodies
 
-// Proxy route
 app.use("/proxy", async (req, res) => {
   try {
     const targetPath = req.originalUrl.replace("/proxy", "");
@@ -25,11 +24,9 @@ app.use("/proxy", async (req, res) => {
       url: targetUrl,
       headers: {
         "Content-Type": "application/json",
+        Authorization:
+          "Basic " + Buffer.from("API:DeepCatch@2024").toString("base64"),
         ...req.headers, // Forward incoming headers
-      },
-      auth: {
-        username: "API",
-        password: "DeepCatch@2024",
       },
       data: req.body,
       timeout: 15000,
