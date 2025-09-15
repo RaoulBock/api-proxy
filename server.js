@@ -17,6 +17,9 @@ app.use("/proxy", async (req, res) => {
     const targetPath = req.originalUrl.replace("/proxy", "");
     const endPointLink = "https://example.com"
     const port = 7108
+
+    const username = "username"
+    const password = "password"
     const targetUrl = `${endPointLink}:${port}${targetPath}`;
 
     console.log("Forwarding request to:", targetUrl);
@@ -27,7 +30,7 @@ app.use("/proxy", async (req, res) => {
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Basic " + Buffer.from("API:DeepCatch@2024").toString("base64"),
+          "Basic " + Buffer.from(`${username}:${password}`).toString("base64"),
         ...req.headers, // Forward incoming headers
       },
       data: req.body,
