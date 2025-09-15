@@ -42,9 +42,12 @@ npm install
 
 # ▶ Usage
 
-Start the server:
+```bash
+#Start the server:
 
-node server.js
+npm run start
+
+```
 
 The proxy will run at:
 
