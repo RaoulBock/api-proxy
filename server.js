@@ -15,7 +15,9 @@ app.use(bodyParser.json()); // Parse JSON bodies
 app.use("/proxy", async (req, res) => {
   try {
     const targetPath = req.originalUrl.replace("/proxy", "");
-    const targetUrl = `https://deepcatch-bc.dpwssa.com:7108${targetPath}`;
+    const endPointLink = "https://example.com"
+    const port = 7108
+    const targetUrl = `${endPointLink}:${port}${targetPath}`;
 
     console.log("Forwarding request to:", targetUrl);
 
