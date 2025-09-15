@@ -43,7 +43,7 @@ npm install
 # ▶ Usage
 
 ```bash
-#Start the server:
+# Start the server:
 
 npm run start
 
