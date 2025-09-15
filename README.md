@@ -71,18 +71,18 @@ const password = "password";                // Basic Auth password
 
 ## ⚠ Security Notes
 
-# The current setup bypasses SSL certificate validation for HTTPS (rejectUnauthorized: false).
+The current setup bypasses SSL certificate validation for HTTPS (rejectUnauthorized: false).
 
-# ✅ Useful for testing with self-signed certificates.
+✅ Useful for testing with self-signed certificates.
 
-# ❌ Not recommended for production — remove or set to true.
+❌ Not recommended for production — remove or set to true.
 
-# Store credentials (username, password) in environment variables instead of hardcoding.
+Store credentials (username, password) in environment variables instead of hardcoding.
 
 ---
 
 ## 📜 License
 
-# This project is licensed under the MIT License.
+This project is licensed under the MIT License.
 
 ---
